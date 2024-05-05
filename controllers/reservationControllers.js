@@ -20,7 +20,9 @@ async function addReservation(req, res) {
   try {
     const reservation = new Reservation({ userId, eventDate, numberOfGuests });
     await reservation.save();
-    return res.status(201).json({ message: "Reservation added successfully", user, sucess: true });
+    return res
+    .status(201)
+    .json({ message: "Reservation added successfully", reservation, sucess: true });
   } catch (e) {
     return res.status(500).json({ message: e.message, success: false });
   }
