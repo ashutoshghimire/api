@@ -9,9 +9,9 @@ connectDb();
 app.use(express.json());
 
 // importing routes
-const userRoutes = require("./routes/user");
-const reservationRoutes = require("./routes/reservation");
-const appointmentRoutes = require("./routes/appointment");
+const userRoutes = require("./routes/userRoutes");
+const reservationRoutes = require("./routes/reservationRoutes");
+const appointmentRoutes = require("./routes/appointmentRoutes");
 
 // user routes
 app.use("/api/user", userRoutes);

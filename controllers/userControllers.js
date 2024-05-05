@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/userModels");
 
 async function addUser(req, res) {
   const { name, email, phone } = req.body;

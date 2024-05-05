@@ -1,4 +1,4 @@
-const Reservation = require("../models/reservation");
+const Reservation = require("../models/reservationModels");
 
 async function addReservation(req, res) {
   const { userId, eventDate, numberOfGuests } = req.body;
@@ -20,9 +20,7 @@ async function addReservation(req, res) {
   try {
     const reservation = new Reservation({ userId, eventDate, numberOfGuests });
     await reservation.save();
-    return res.status(201).json({
-      reservation,
-    });
+    return res.status(201).json({ message: "Reservation added successfully", user, sucess: true });
   } catch (e) {
     return res.status(500).json({ message: e.message, success: false });
   }

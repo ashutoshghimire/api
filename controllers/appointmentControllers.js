@@ -1,4 +1,4 @@
-const Appointment = require("../models/appointment");
+const Appointment = require("../models/appointmentModels");
 
 async function addAppointment(req, res) {
   const { date, time } = req.body;
@@ -19,7 +19,7 @@ async function addAppointment(req, res) {
     const appointment = new Appointment({ date, time });
     await appointment.save();
     return res.status(201).json({
-      message: "Appointment added successfully",
+      message: "Appointment booked successfully",
       appointment,
     });
   } catch (e) {
